@@ -1,0 +1,13 @@
+keys:
+  tenant-id: <TENANT_ID>
+cors:
+  originPatterns:  # uri separada por virgula e sem espaço
+spring:
+  application:
+    name: customer_area_api
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: https://login.microsoftonline.com/${keys.tenant-id}/v2.0
+          jwk-set-uri: https://login.microsoftonline.com/${keys.tenant-id}/discovery/v2.0/keys
